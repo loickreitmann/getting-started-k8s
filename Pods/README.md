@@ -1,8 +1,8 @@
 # Pods
 
-## Deploying a pod
+## Deploying a Pod
 
-### See the running nodes:
+### See the running nodes
 
 ```shell
 → kubectl get nodes
@@ -37,7 +37,7 @@ NAME        READY   STATUS    RESTARTS       AGE   IP          NODE             
 hello-pod   1/1     Running   16 (24m ago)   45d   10.1.0.37   docker-desktop   <none>           <none>
 ```
 
-### Dscribing a pod
+### Describing a pod
 
 ```shell
 → kubectl describe pod hello-pod
@@ -102,4 +102,26 @@ Events:
   Normal  Pulled          27m   kubelet  Container image "loickreitmann/getting-started-k8s:1.0" already present on machine
   Normal  Created         27m   kubelet  Created container web-ctr
   Normal  Started         27m   kubelet  Started container web-ctr
+```
+
+## Multi-Container Pod
+
+```shell
+→ kubectl apply -f multi-pod.yml 
+
+pod/nginx created
+```
+
+## Deleting a Pod
+
+### By Its Name
+
+```shell
+→ kubectl delete pod hello-pod
+```
+
+### With Its Pod Definition Files
+
+```shell
+→ kubectl delete -f multi-pod.yml 
 ```
